@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<entry id="0">
+	<question completed="False" type="singlechoice">
+		<prompt>
+			Were you indoors our outdoors when this need arose?
+		</prompt>
+		<choice response="False">
+			Indoors
+		</choice>
+		<choice response="False">
+			Outdoors
+		</choice>
+	</question>
+	<question completed="False" type="multichoice">
+		<prompt>
+			During this need, were you (check all that apply):
+		</prompt>
+		<choice response="False">
+			Engaged in a conversation
+		</choice>
+		<choice response="False">
+			Engaged in a task that occupied your hands
+		</choice>
+		<choice response="False">
+			In a noisy environment that would have made listening to a phone call difficult
+		</choice>
+		<choice response="False">
+			In an environment where talking on the phone would have been inappropriate
+		</choice>
+	</question>
+	<question completed="False" type="openshort">
+		<prompt>
+			Where were you?
+		</prompt>
+	</question>
+	<question completed="False" type="openlong">
+		<prompt>
+			Please describe this need in detail
+		</prompt>
+	</question>
+</entry>

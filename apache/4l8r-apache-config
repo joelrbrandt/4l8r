@@ -1,0 +1,79 @@
+FastCgiConfig -pass-header Authorization
+NameVirtualHost *:80
+<VirtualHost *:80>
+	ServerName www.4l8r.org:80
+	ServerAdmin webmaster@4l8r.org
+	
+	DocumentRoot /var/www/4l8r
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/4l8r>
+		Options FollowSymLinks MultiViews ExecCGI
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	# redirects to make sure some pages are accessed securely
+	Redirect /p https://www.4l8r.org/p
+	Redirect /a https://www.4l8r.org/a
+	Redirect /login https://www.4l8r.org/login
+	Redirect /r https://www.4l8r.org/r
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+	ServerSignature On
+</VirtualHost>
+
+NameVirtualHost *:443
+<VirtualHost *:443>
+	ServerName www.4l8r.org:443
+	ServerAdmin webmaster@4l8r.org
+	
+	DocumentRoot /var/www/4l8r
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /var/www/4l8r>
+		Options FollowSymLinks MultiViews ExecCGI
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	RewriteEngine On
+	RewriteRule	^/p$	/dispatch.fcgi/p	[L]
+	RewriteRule	^/p/(.*)$	/dispatch.fcgi/p/$1	[L]
+	RewriteRule	^/r$	/dispatch.fcgi/r	[L]
+	RewriteRule	^/r/(.*)$	/dispatch.fcgi/r/$1	[L]
+	RewriteRule	^/a$	/dispatch.fcgi/a	[L]
+	RewriteRule	^/a/(.*)$	/dispatch.fcgi/a/$1	[L]
+	RewriteRule	^/login$	/dispatch.fcgi/login	[L]
+	RewriteRule	^/login/(.*)$	/dispatch.fcgi/login/$1	[L]
+	RewriteRule	^/error$	/dispatch.fcgi/error	[L]
+	RewriteRule	^/error/(.*)$	/dispatch.fcgi/error/$1	[L]
+
+
+	SSLEngine On
+	SSLCertificateFile /etc/ssl/certs/www_4l8r_org/www_4l8r_org.crt
+	SSLCertificateKeyFile /etc/ssl/certs/www_4l8r_org/private/www_4l8r_org.key
+	SSLCertificateChainFile /etc/ssl/certs/www_4l8r_org/gd_intermediate_bundle.crt
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+	ServerSignature On
+
+</VirtualHost>
