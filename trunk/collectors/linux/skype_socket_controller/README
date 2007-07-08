@@ -1,0 +1,10 @@
+
+1. run qmake if you have no Makefile or the default Makefile fails to build.
+2. run make.
+3. launch ./testapp and follow connection procedure:
+   < NAME testapp
+   Skype will pop up an authorization popup, click Yes.
+   > OK
+   < PROTOCOL 5
+   You will start receiving Skype notifications after sending protocol command.
+   Send any commands as per API doc.
