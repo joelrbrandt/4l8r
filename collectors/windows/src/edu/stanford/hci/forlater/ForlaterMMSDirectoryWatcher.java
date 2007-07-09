@@ -110,6 +110,8 @@ public class ForlaterMMSDirectoryWatcher extends AbstractDirectoryWatcher {
 
 		if (from != null && (text != null || pictureFile != null)) {
 			result = ForlaterProcessor.addEntry(from, text, null, pictureFile);
+		} else {
+			result = true;
 		}
 
 		return result;

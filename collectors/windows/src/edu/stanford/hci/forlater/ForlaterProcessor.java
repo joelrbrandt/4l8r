@@ -150,13 +150,13 @@ public class ForlaterProcessor {
 		(new ForlaterVMDirectoryWatcher(VM_DIRECTORY, VM_DIRECTORY_PROCESSED)).start();
 		System.out.println("  ...done");
 
-//		System.out.println("  bringing up the incoming SMS watcher...");
-//		(new ForlaterSMSDirectoryWatcher(SMS_DIRECTORY, SMS_DIRECTORY_PROCESSED)).start();
-//		System.out.println("  ...done");
-//
-//		System.out.println("  bringing up the incoming MMS watcher...");
-//		(new ForlaterMMSDirectoryWatcher(MMS_DIRECTORY, MMS_DIRECTORY_PROCESSED)).start();
-//		System.out.println("  ...done");
+		System.out.println("  bringing up the incoming SMS watcher...");
+		(new ForlaterSMSDirectoryWatcher(SMS_DIRECTORY, SMS_DIRECTORY_PROCESSED)).start();
+		System.out.println("  ...done");
+
+		System.out.println("  bringing up the incoming MMS watcher...");
+		(new ForlaterMMSDirectoryWatcher(MMS_DIRECTORY, MMS_DIRECTORY_PROCESSED)).start();
+		System.out.println("  ...done");
 
 		System.out.println("...running!");
 		while(true) {
