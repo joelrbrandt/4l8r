@@ -63,10 +63,10 @@ public abstract class AbstractDirectoryWatcher extends Thread {
 						ForlaterProcessor.log("Error: could not move file " + f.getAbsolutePath());
 					}
 				} else {
-					break;
+					ForlaterProcessor.log("Unknown error processing \"" + f.getAbsolutePath() + "\"");
 				}
 			} catch(Exception e) {
-				ForlaterProcessor.log("Unknown error processing \"" + f.getName() + "\" :" + e.getMessage());
+				ForlaterProcessor.log("Unknown error processing \"" + f.getName() + "\" caused exception:" + e.getMessage());
 			}
 			try { // to make sure we don't have anything with the same filename
 				Thread.sleep(1250);
