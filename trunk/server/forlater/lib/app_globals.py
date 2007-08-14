@@ -30,7 +30,7 @@ class Globals(object):
         self.audio_file_dir = '/4l8r/audio/'
         self.picture_file_dir = '/4l8r/pictures/'
         self.entry_file_dir = '/4l8r/entries/'
-        self.sms_url_server = '172.27.76.139:8802'
+        self.sms_url_server = '172.27.76.138:8802'
         self.sms_url_path = '/Send%20Text%20Message.htm'
         self.upload_auth_token = 'supersecret4l8r'
         self.re_strip_non_number = re.compile(r'[^0-9]')
