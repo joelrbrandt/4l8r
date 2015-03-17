@@ -1,0 +1,3 @@
+4l8r, developed in the Stanford University Human-Computer Interaction Group, is a tool that lowers the burden of participant data capture under mobile and active conditions. It is intended to aid diary-study-like fieldwork.
+
+4l8r provides a server which can capture text (SMS), picture (MMS) and voicemail "snippets" sent by users from their mobile phones. These "snippets" are then show to users at a convenient time (for example when they are at home in the evening) through a web-based interface. This web-based interface allows them to complete a thorough, structured diary entry.
